@@ -52,7 +52,7 @@
     <header id="top" class="header">
         <div class="text-vertical-center">
             <h1>ANGEL LO</h1>
-            <h3>CHRONIC DOODLER</h3>
+            <h3>DEVELOPER + DOODLER</h3>
             <br>
             <a href="#about" class="btn btn-dark btn-lg">WHO</a>
         </div>
@@ -67,11 +67,11 @@
                         An eye for design and a mind for code
                     </h2>
                     <p class="lead">
-                        { "female":[<br>
-                        "Occupation":"Student",<br>
+                        { "Angel":[<br>
+                        "Occupation":"Software Design Engineer",<br>
+                        "Company": "Electronic Arts",<br>
                         "Location":"Austin, Texas",<br>
-                        "Major":"Management Information Systems",<br>
-                        "Graduation Date":"May 2017"<br>
+                        "Alma Mater":"The University of Texas Austin"<br>
                     ]}</p>
                 </div>
             </div>
@@ -80,8 +80,7 @@
         <!-- /.container -->
     </section>
 
-    <!-- Services -->
-    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <!-- Skills -->
     <section id="services" class="services bg-primary">
         <div class="container">
             <div class="row text-center">
@@ -89,43 +88,7 @@
                     <h2>SKILLS</h2>
                     <hr class="small">
                     <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-camera-retro fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong><mark>Adobe Photoshop</mark></strong>
-                                </h4>
-                                <p>
-                                    <i class="fa fa-star fa-lg"></i>
-                                    <i class="fa fa-star fa-lg"></i>
-                                    <i class="fa fa-star fa-lg"></i>
-                                    <i class="fa fa-star fa-lg"></i>
-                                    <i class="fa fa-star-half-o fa-lg"></i>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-paint-brush fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong><mark>Adobe Illustrator</mark></strong>
-                                </h4>
-                                <p>
-                                    <i class="fa fa-star fa-lg"></i>
-                                    <i class="fa fa-star fa-lg"></i>
-                                    <i class="fa fa-star fa-lg"></i>
-                                    <i class="fa fa-star-half-o fa-lg"></i>
-                                    <i class="fa fa-star-o fa-lg"></i>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-4 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -134,19 +97,31 @@
                                 <h4>
                                     <strong><mark>Programming</mark></strong>
                                 </h4>
-                                <p>Python, C#, JavaScript, PHP, Swift, HTML/CSS, SQL</p>
+                                <p>Python, JavaScript, Swift, SQL</p>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-4 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-shield fa-stack-1x text-primary"></i>
+                                <i class="fa fa-laptop fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong><mark>Marketing and Branding</mark></strong>
+                                    <strong><mark>Web Development</mark></strong>
                                 </h4>
-                                <p>UT Senate of College Councils, UT Master of Science in Business Analytics Program</p>
+                                <p>Angular, Django, Express, Redux, Node.js, MySQL</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-paint-brush fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong><mark>Design</mark></strong>
+                                </h4>
+                                <p>Adobe Illustrator, Adobe Photoshop, InvisionApp</p>
                             </div>
                         </div>
                     </div>
@@ -260,7 +235,7 @@
                             </div>
                         </div>
                     <!-- <a href="#" class="btn btn-dark">View More Items</a> -->
-                    <button type="button" class="btn btn-dark" data-toggle="collapse" data-target="#fullportfolio">View More</button>
+                    <button id="viewBtn" type="button" class="btn btn-dark" data-toggle="collapse" data-target="#fullportfolio" onclick="toggleBtn()" value="View More">View More</button>
                 </div>
                 <!-- /.col-lg-10 -->
             </div>
@@ -304,7 +279,6 @@
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; Angel Lo 2016</p>
                 </div>
             </div>
         </div>
@@ -333,6 +307,15 @@
         e.preventDefault();
         $("#sidebar-wrapper").toggleClass("active");
     });
+
+    function toggleBtn() {
+      var btn = document.getElementById("viewBtn");
+      if (btn.value == "View More") {
+        btn.innerHTML = "View Fewer";
+      } else {
+        btn.innerHTML= "View More";
+      }
+    }
 
     // Scrolls to the selected menu item on the page
     $(function() {
